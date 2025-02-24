@@ -11,6 +11,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  overflow-y: visible;
   box-sizing: border-box;
   background-color: #faf7f5;
  
@@ -31,24 +32,17 @@ html, body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 0 20px;
  position: relative;
- right: 30px;
+right: 10px;
 margin-top: 2%;
- border-radius: 50px;
- 
+border-radius: 50px;
 }
 
 table {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin-left: 15px;
-
 }
 
 table td {
-  padding: 40px;
   vertical-align: middle;
   white-space: nowrap;
 }
@@ -57,10 +51,12 @@ table td {
 
 /* Logo */
 .logo {
-  margin-right: 50px;
+  margin-right: 40px;
   width: 50px;
   height: 50px;
   border-radius: 10px;
+  position: relative;
+  top: 8px;
 }
 
 a {
@@ -72,8 +68,9 @@ a {
   color: #000;
   font-size: xx-small;
   font-weight: bold;
-  margin-top: -4px;
-  margin-left: -5px;
+ position: relative;
+ bottom: 25px;
+ right: 20px;
 }
 
 /* Main Menu Links */
@@ -81,7 +78,7 @@ a {
   text-decoration: none;
   color: #000;
   padding: 15px;
-  margin-left: 75px;
+  margin-left: 15px;
   text-wrap: nowrap;
   border-left: 5px solid transparent;
   box-sizing: border-box;
@@ -113,18 +110,7 @@ a {
 }
 
 /* Mobile Menu (Initially Hidden) */
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background-color:whitesmoke;
-  padding: 10px;
-  width: 250px;
-  height: 300px;
-  border: 2px solid whitesmoke;
-  position: relative;
-  left: 220px;
 
-}
 
 .mobile-menu.open {
   display: flex; /* Show when open */
@@ -159,149 +145,109 @@ h2 {
   text-align: left;
 }
 
-/* Footer Styles */
-.footer {
+.Footer1{
+    width: 105%;
+    background-color: #0f172a;
+    color: white;
+    text-decoration: none;
+    display: flex;
+      justify-content: center; 
+      align-items: center; 
+      position: relative; 
+      top:55px;
+      bottom: 0px;
+    right: 32px;
+      padding-top:0px;
+      padding-bottom: 60px;
+      height: 35vh;
+  }
+  .logo1{
+    position: relative;
+    left: 100px;
+    bottom: 40px;
+   
+  }
+  .logoimg{
+    border-radius: 50px;
+  }
+  .Name{
+    position: relative;
+    top: 30px;
+
+  }
+  .Name h3{
+    position: relative;
+    right: 45px;
+    top: 5px;
+  
+  }
+  .social-media {
+    display: flex;            
+    gap: 10px;                
+    align-items: center;
+    position: relative;
+    left: 20px; 
+    color: white;    
+  }
+  
+  .CopyRight{
+   position: relative;
+   right: 40px;
+   font-size: 14px !important;
+  }
+  .footLink{
+    font-size: 24px;
+    width: 30px !important;
+  height: 30px !important;
   display: flex;
-  justify-content: space-evenly;
-  background-color: #232f3e;
-  width: 100%;
-  color: white;
-  padding: 5px 0;
-}
+    justify-content: center;  
+    align-items: center; 
+  }
+  
 
-.foot {
-  text-decoration: none;
-  color: white;
-}
-
-.foot a {
-  text-decoration: none;
-  color: white;
-}
-
-.foot-logo-moto {
-  font-size: xx-small;
-  color: white;
-  font-weight: bold;
-  margin-left: -4px;
-}
-
-.Contact {
-padding-bottom: 25px;
-position: relative;
-top: 15px;
-}
-.Followus{
-  padding-bottom: 20px;
-}
-
-/* Footer Hover Effects */
-.Home:hover, .Gallery:hover {
-  color: black;
-  border: 2px solid #94dee7;
-  width: 400px;
-  height: 400px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #94dee7;
-}
-
-.icon a {
-  margin-right: 6px;
-}
-
-.icon a:hover {
-  color: #94dee7;
+  .mobile-menu{
+    position: absolute;
+    top: -100vh;
+    left:50%;
+    right: -50%;
+    transform: translateX(-50%);
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    z-index: 100;
+    transition: top 0.3s ease-in-out;
+    border-radius: 10px;
+ 
+  }
+  .mobile-menu.open {
+    top: 20%;
 }
 
 /* -------------------- Media Queries for Responsiveness ---------------------- */
 
-/* Tablet and Small Screens (max-width: 1024px) */
-@media (max-width: 1024px) {
-  /* Adjust Image Grid to 3 Columns */
-  .image-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
-  /* Main Menu Adjustments */
-  .ribbion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
 
-  table {
-    display: block;
-  }
+@media only screen and (max-width: 480px) {
 
-  h2 {
-    font-size: 1.3rem;
-  }
 
-  .logo {
-    width: 50px;
-    height: 50px;
-    position: relative;
-    bottom: 10px;
-  }
-.comp-name{
-  font-weight: bold;
-  position: relative;
-  bottom: 8px;
-}
-  /* Footer Adjustments */
-  .footer {
-    display: none;
-  }
-}
 
-/* Mobile Devices (max-width: 768px) */
-@media (max-width: 768px) {
-  /* Hide Full Menu and Show Hamburger */
-  .menu-links {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-    position: relative;
-    left: 200px;
-  }
-
-  /* Adjust Image Grid to 2 Columns */
-  .image-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  h2 {
-    font-size: 1.1rem;
-  }
-
-  .button-type {
-    width: 60px;
-    padding: 5px;
-  }
-  logo {
-    width: 50px;
-    height: 50px;
-    position: relative;
-    bottom: 10px;
-  }
-.comp-name{
-  font-weight: bold;
-  position: relative;
-  bottom: 8px;
-}
-  
-
-  
-  .footer {
-   display: none;
-  }
-}
-
-@media (max-width: 480px) {
+    .ribbion {
+        font-size: large;
+        width: 95vw;
+        height: 15vh;
+        background-color: #e7e2df;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+       position: relative;
+      right: 30px;
+      margin-top: 5%;
+      border-radius: 50px;
+      }
   /* Single Column Image Grid */
   .image-grid {
     grid-template-columns: 1fr;
@@ -320,24 +266,33 @@ top: 15px;
  
 
   /* Show the hamburger icon on small screens */
+
   .hamburger {
     display: block;
     position: relative;
-     left: 130px;
+     left: 40px;
+     top:40px;
+     color: black;
   }
 
 
-  logo {
+  .logo {
     width: 50px;
     height: 50px;
     position: relative;
     bottom: 10px;
+    right: 80px;
   }
-.comp-name{
-  font-weight: bold;
-  position: relative;
-  bottom: 8px;
-}
+
+  .comp-name {
+    color: #000;
+    font-size: xx-small;
+    font-weight: bold;
+   position: relative;
+   bottom: 25px !important;
+   right: 100px;
+  }
+
 
   /* Footer Adjustments */
   .footer {
@@ -347,4 +302,234 @@ top: 15px;
   .footer table {
     display: none
   }
+
+  .main{
+position: relative;
+right: 30px;
+  }
+  .mobile-menu {
+    width: 50%;
+    padding: 15px;
 }
+
+.button-type {
+    font-size: 16px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+.menu-links {
+    display: none;
+  }
+  .button-type:hover{
+    background-color: transparent !important; 
+    color: white !important; 
+}
+
+}
+
+@media  only screen and (min-width:481px) and (max-width: 768px) {
+
+    .ribbion {
+        font-size: large;
+        width: 95vw;
+        height: 15vh;
+        background-color: #e7e2df;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+       position: relative;
+      right: 28px;
+      margin-top: 5%;
+      border-radius: 50px;
+      }
+
+  .menu-links {
+    display: none;
+  }
+
+  /* Adjust Image Grid to 2 Columns */
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .button-type {
+    width: 60px;
+    padding: 5px;
+  }
+  .logo {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 10px;
+    right: 29vw;
+  }
+
+  .comp-name {
+    color: #000;
+    font-size: xx-small;
+    font-weight: bold;
+   position: relative;
+   bottom: 25px !important;
+   right: 33vw;
+  }
+  
+  .hamburger {
+    display: block;
+    position: relative;
+     left: 22vw;
+     top:40px;
+     color: black;
+  }
+
+  .main{
+    position: relative;
+    right: 30px;
+      }
+      .mobile-menu {
+        width: 50%;
+        padding: 15px;
+    }
+    
+    .button-type {
+        font-size: 16px;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+    .button-type:hover{
+    
+        background-color: transparent !important; 
+        color: white !important; 
+    }
+  
+
+  
+  .footer {
+   display: none;
+  }
+}
+
+@media only screen and (min-width:761px) and (max-width:1023px){
+
+    .ribbion {
+        font-size: large;
+        width: 95vw;
+        height: 15vh;
+        background-color: #e7e2df;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+       position: relative;
+      right: 28px;
+      margin-top: 5%;
+      border-radius: 50px;
+      }
+
+  .menu-links {
+    display: none;
+  }
+
+  /* Adjust Image Grid to 2 Columns */
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .button-type {
+    width: 60px;
+    padding: 5px;
+  }
+  .logo {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 10px;
+    right: 35vw;
+  }
+
+  .comp-name {
+    color: #000;
+    font-size: xx-small;
+    font-weight: bold;
+   position: relative;
+   right: 37.5vw;
+   bottom: 22px !important; 
+  }
+  
+  .hamburger {
+    display: block;
+    position: relative;
+     left: 30vw;
+     top:40px;
+     color: black;
+  }
+
+  .main{
+    position: relative;
+    right: 30px;
+      }
+      .mobile-menu {
+        width: 50%;
+        padding: 15px;
+    }
+    
+    .button-type {
+        font-size: 16px;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+    .button-type:hover{
+        background-color: transparent !important; 
+        color: white !important; 
+    }
+  
+
+  
+  .footer {
+   display: none;
+  }
+
+
+}
+
+
+
+/* Tablet and Small Screens (max-width: 1024px) */
+@media only screen and  (max-width: 1024px) {
+    /* Adjust Image Grid to 3 Columns */
+    .image-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  /* Main Menu Adjustments */
+    h2 {
+      font-size: 1.3rem;
+    }
+  
+    .logo {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      bottom: 10px;
+    }
+  .comp-name{
+    font-weight: bold;
+    position: relative;
+    bottom: 8px;
+  }
+    /* Footer Adjustments */
+    .footer {
+      display: none;
+    }
+  }
+  
+ 
+  

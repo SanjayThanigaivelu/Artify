@@ -1,9 +1,12 @@
 import { createApi } from 'unsplash-js';
 import { useEffect } from 'react';
 
+
 // Initialize Unsplash API
+console.log("Unsplash API Key:", import.meta.env.VITE_UNSPLASH_KEY);
+
 const unsplash = createApi({
-    accessKey: 'fGu1lgAmLBhRgtCTDzG9SEgdUxAyVro1rRrDUWVakgc'
+    accessKey: import.meta.env.VITE_UNSPLASH_KEY 
 });
 
 // Function to fetch photos based on a query (art category)
@@ -15,9 +18,11 @@ const fetchPhotos = async (query, photoCount = 4) => {
             perPage: photoCount, // Fetch the number of photos based on photoCount
             orientation: 'portrait'
         });
+        console.log(import.meta.env.VITE_UNSPLASH_KEY)
         return result.response.results; // Extract only the image array
     } catch (error) {
         console.error('Error fetching photos:', error);
+        console.log(import.meta.env.VITE_UNSPLASH_KEY)
         return []; // Return empty array on error
     }
 };
@@ -26,11 +31,11 @@ const fetchPhotos = async (query, photoCount = 4) => {
 const getPageType = () => {
     const path = window.location.pathname;
 
-    if (path.includes('Mordern-art.html')) return { artType: 'Modern Art', containerId: 'modern-art-images', photoCount: 20 };
-    if (path.includes('classic.html')) return { artType: 'Classic Art', containerId: 'classic-art-images', photoCount: 20 };
-    if (path.includes('sculptures.html')) return { artType: 'Sculpture Art', containerId: 'sculpture-art-images', photoCount: 20 };
-    if (path.includes('cubisum.html')) return { artType: 'Cubism', containerId: 'cubism-art-images', photoCount: 20 };
-    if (path.includes('abstract.html')) return { artType: 'Abstract Art', containerId: 'abstract-art-images', photoCount: 20 };
+    if (path.includes('/modern-art')) return { artType: 'Modern Art', containerId: 'modern-art-images', photoCount: 20 };
+    if (path.includes('/classic')) return { artType: 'Classic Art', containerId: 'classic-art-images', photoCount: 20 };
+    if (path.includes('/sculptures')) return { artType: 'Sculpture Art', containerId: 'sculpture-art-images', photoCount: 20 };
+    if (path.includes('/cubism')) return { artType: 'Cubism', containerId: 'cubism-art-images', photoCount: 20 };
+    if (path.includes('/abstract')) return { artType: 'Abstract Art', containerId: 'abstract-art-images', photoCount: 20 };
 
     // Default to homepage
     return { artType: null, containerId: null, photoCount: 4 };
@@ -40,11 +45,11 @@ const getPageType = () => {
 const DisplayPhotos = () => {
     useEffect(() => {
         const artTypes = [
-            { name: 'Modern Art', id: 'modern-art-images', link: './Mordern-art.html' },
-            { name: 'Classic Art', id: 'classic-art-images', link: './classic.html' },
-            { name: 'Sculpture Art', id: 'sculpture-art-images', link: './sculptures.html' },
-            { name: 'Cubism', id: 'cubism-art-images', link: './cubisum.html' },
-            { name: 'Abstract Art', id: 'abstract-art-images', link: './abstract.html' }
+            { name: 'Modern Art', id: 'modern-art-images', link: '/modern-art'},
+            { name: 'Classic Art', id: 'classic-art-images', link: '/classic'},
+            { name: 'Sculpture Art', id: 'sculpture-art-images', link: '/sculptures'},
+            { name: 'Cubism', id: 'cubism-art-images', link: '/cubism'},
+            { name: 'Abstract Art', id: 'abstract-art-images', link: '/abstract'}
         ];
 
         const { artType, containerId, photoCount } = getPageType();

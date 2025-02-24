@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './assets/logo.png';
@@ -5,27 +6,25 @@ import './style.css';
 import DisplayPhotos from './API.js'; // Import DisplayPhotos component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram ,faLinkedin,faGithub} from '@fortawesome/free-brands-svg-icons';
-
-function Abstract() {
- useEffect(() => {
-         const hamburger = document.querySelector('.hamburger-icon');
- 
-         if (!hamburger) return; // Ensure the element exists
- 
-         const toggleMenu = () => {
-             const mobileMenu = document.getElementById('mobileMenu');
-             if (mobileMenu) {
-                 mobileMenu.classList.toggle('open');
-             }
-         };
- 
-         hamburger.addEventListener('click', toggleMenu);
- 
-         return () => {
-             hamburger.removeEventListener('click', toggleMenu);
-         };
-     }, []);
- 
+function MordenArt() {
+    useEffect(() => {
+             const hamburger = document.querySelector('.hamburger-icon');
+     
+             if (!hamburger) return; // Ensure the element exists
+     
+             const toggleMenu = () => {
+                 const mobileMenu = document.getElementById('mobileMenu');
+                 if (mobileMenu) {
+                     mobileMenu.classList.toggle('open');
+                 }
+             };
+     
+             hamburger.addEventListener('click', toggleMenu);
+     
+             return () => {
+                 hamburger.removeEventListener('click', toggleMenu);
+             };
+         }, []);
   return (
     <div className="First">
       {/* Header Section */}
@@ -67,8 +66,8 @@ function Abstract() {
 
       {/* Main Content */}
       <div className="main">
-        <h2>Abstract Art</h2>
-        <div className="image-grid" id="abstract-art-images"></div>
+        <h2>Modern Art</h2>
+        <div className="image-grid" id="modern-art-images"></div>
          <DisplayPhotos />
       </div>
 
@@ -88,7 +87,7 @@ function Abstract() {
  
      </div>
     </div>
-  );
+  )
 }
 
-export default Abstract;
+export default MordenArt

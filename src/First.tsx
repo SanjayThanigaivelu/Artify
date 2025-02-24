@@ -2,7 +2,8 @@ import React , { useEffect } from  'react';
 import {Link} from 'react-router-dom';
 import logo from './assets/logo.png';
 import DisplayPhotos from './API.js'; // Import DisplayPhotos component
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram ,faLinkedin,faGithub} from '@fortawesome/free-brands-svg-icons';
 import './style.css';
 
 function First() {
@@ -40,11 +41,13 @@ function First() {
                     </td>
                     <td className="menu-links">
                         <Link to="/" className="button-type">Home</Link>
-                        <Link to="/Mordern-art" className="button-type">Modern Art</Link>
+                        <Link to="/modern-art" className="button-type">Modern Art</Link>
                         <Link to="/classic" className="button-type">Classic</Link>
                         <Link to="/sculptures" className="button-type">Sculptures</Link>
                         <Link to="/cubisum" className="button-type">Cubism</Link>
                         <Link to="/abstract" className="button-type">Abstract Art</Link>
+                       
+                       
                     </td>
                     <td className="hamburger">
                         <div className="hamburger-icon">&#9776;</div>
@@ -56,7 +59,7 @@ function First() {
 
     <div className="mobile-menu" id="mobileMenu">
         <Link to="/" className="button-type">Home</Link>
-        <Link to="/Mordern-art" className="button-type">Modern Art</Link>
+        <Link to="/mordern-art" className="button-type">Modern Art</Link>
         <Link to="/classic" className="button-type">Classic</Link>
         <Link to="/sculptures" className="button-type">Sculptures</Link>
         <Link to="/cubisum" className="button-type">Cubism</Link>
@@ -64,7 +67,7 @@ function First() {
     </div>
 
     <div className="main">
-        <Link to="/Mordern-art"><h2 id="Mordern-art">Modern Art</h2></Link>
+        <Link to="/modern-art"><h2 >Modern Art</h2></Link>
         <div className="image-grid" id="modern-art-images"></div>
 
         <Link to="/classic"><h2>Classic Art</h2></Link>
@@ -83,40 +86,19 @@ function First() {
     {/* Add DisplayPhotos component to fetch and display images */}
     <DisplayPhotos />
 
-    <div className="footer">
-        <table className="footer-bottom">
-            <tbody>
-                <tr>
-                    <td>
-                        <img className="foot logo" src={logo} alt="logo" />
-                        <div className="foot-logo-moto">Artify Est.2024</div>
-                    </td>
-                    <td><Link to="/" className="foot Home">Home</Link></td>
-                    <td><Link to="/modern-art" className="foot Gallery">Gallery</Link></td>
-                    <td className="foot Contact">
-                        Contact
-                        <div>
-                            <i className="fa fa-envelope"></i>
-                            <a href="mailto:sanjaymuthulakshmi@gmail.com?subject=Art%20Gallery%20Inquiry">
-                                sanjaymuthulakshmi@gmail.com
-                            </a>
-                            <br />
-                            <i className="fa fa-phone"></i> 9488941260
-                        </div>
-                    </td>
-                    <td className="foot Followus">
-                        Follow Us
-                        <div className="icon">
-                            <a href="https://www.instagram.com/sanjay_thanigaivelu/"><i className="fab fa-instagram"></i></a>
-                            <a href="https://www.linkedin.com/in/sanjay-thanigaive07/"><i className="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </td>
-                    <td className="foot Copyright">
-                        &#169;2024 Artify. All rights reserved.
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div className='Footer1'>
+  
+ <div className='logo1'>
+ <Link to ="/" className="footLink1"><img className="logoimg"  src={logo} alt="AgriVibes Logo" /></Link>
+    </div>
+<div className='Name'>
+  <h3>Artify Est:2025</h3>
+
+  <p className='CopyRight'>Copyright © 2025 - All right reserved</p>
+  <span className='social-media'><Link to='https://www.instagram.com/sanjay_thanigaivelu/' className="footLink insta"><FontAwesomeIcon icon={faInstagram} /></Link>  <Link to='https://linkedin.com/in/sanjay-thanigaive07' className="footLink linkdin"><FontAwesomeIcon icon={faLinkedin} />  </Link><Link to='https://github.com/SanjayThanigaivelu' className="footLink git"><FontAwesomeIcon icon={faGithub}/></Link></span>
+</div>
+
+
     </div>
 </div>
   )
