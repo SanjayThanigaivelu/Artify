@@ -1,10 +1,10 @@
 import React , { useEffect } from  'react';
 import {Link} from 'react-router-dom';
-import logo from './assets/logo.png';
-import DisplayPhotos from './API.js'; // Import DisplayPhotos component
+import logo from '../assets/logo.png';
+import DisplayPhotos from '../API/API.js'; // Import DisplayPhotos component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram ,faLinkedin,faGithub} from '@fortawesome/free-brands-svg-icons';
-import './style.css';
+import '../style.css';
 
 function First() {
 

@@ -1,12 +1,12 @@
 
 import { BrowserRouter as Router, Routes,Route} from 'react-router-dom' ;
 import './App.css'
-import MordenArt from './MordenArt';
-import Sculptures from './Sculptures';
-import Cubism from './Cubism';
-import Abstract from './abstract';
-import First from './First';
-import Classic from './Classic';
+import MordenArt from '../ImageCategory/MordenArt.tsx';
+import Sculptures from '../ImageCategory/Sculptures.tsx';
+import Cubism from '../ImageCategory/Cubism';
+import Abstract from '../ImageCategory/Abstract.tsx';
+import First from '../InitialPage/First.tsx';
+import Classic from '../ImageCategory/Classic';
 
 function App() {
   
