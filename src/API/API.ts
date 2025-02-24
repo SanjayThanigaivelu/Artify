@@ -3,14 +3,14 @@ import { useEffect } from 'react';
 
 
 // Initialize Unsplash API
-console.log("Unsplash API Key:", import.meta.env.VITE_UNSPLASH_KEY);
+//console.log("Unsplash API Key:", import.meta.env.VITE_UNSPLASH_KEY);
 
 const unsplash = createApi({
     accessKey: import.meta.env.VITE_UNSPLASH_KEY 
 });
 
 // Function to fetch photos based on a query (art category)
-const fetchPhotos = async (query, photoCount = 4) => {
+const fetchPhotos = async (query: string, photoCount = 4) => {
     try {
         const result = await unsplash.search.getPhotos({
             query: query,
@@ -18,11 +18,10 @@ const fetchPhotos = async (query, photoCount = 4) => {
             perPage: photoCount, // Fetch the number of photos based on photoCount
             orientation: 'portrait'
         });
-        console.log(import.meta.env.VITE_UNSPLASH_KEY)
-        return result.response.results; // Extract only the image array
+        
+        return result.response?.results || []; // Extract only the image array
     } catch (error) {
         console.error('Error fetching photos:', error);
-        console.log(import.meta.env.VITE_UNSPLASH_KEY)
         return []; // Return empty array on error
     }
 };
